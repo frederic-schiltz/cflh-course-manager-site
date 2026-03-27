@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFLH Course Manager</title>
+    <style>
+        :root {
+            --bg: #f7f8fa;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 32px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        h2 {
+            margin-top: 28px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin: 0 0 14px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .button-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button-link:hover {
+            text-decoration: none;
+            opacity: 0.92;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>CFLH Course Manager</h1>
+            <p class="subtitle">
+                A desktop application for managing language course administration.
+            </p>
+
+            <p>
+                CFLH Course Manager is designed to support authorized staff in handling
+                course participant data and communication tasks efficiently.
+            </p>
+
+            <h2>Main features</h2>
+            <ul>
+                <li>Manage participant and course-related data</li>
+                <li>Manage course documents such as certificates</li>
+                <li>Send emails with attachments to course participants</li>
+            </ul>
+
+            <h2>Use of Gmail</h2>
+            <p>
+                The application connects to Gmail only for sending emails explicitly initiated by the user.
+                It does not read inbox contents or analyze mailbox data.
+            </p>
+
+            <a class="button-link" href="privacy.html">Read the Privacy Policy</a>
+
+            <p class="footer">
+                Support contact: frederic.schiltz25@gmail.com
+            </p>
+        </div>
+    </div>
+</body>
+</html>
