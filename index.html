@@ -32,6 +32,33 @@
             padding: 48px 20px;
         }
 
+        .topbar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
         .card {
             background: var(--card);
             border: 1px solid var(--border);
@@ -80,9 +107,15 @@
             font-size: 0.95rem;
         }
 
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
         .button-link {
             display: inline-block;
-            margin-top: 10px;
             padding: 10px 16px;
             border-radius: 10px;
             background: var(--accent);
@@ -99,38 +132,94 @@
 </head>
 <body>
     <div class="container">
+        <div class="topbar">
+            <div class="lang-switcher">
+                <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+            </div>
+        </div>
+
         <div class="card">
-            <h1>CFLH Course Manager</h1>
-            <p class="subtitle">
+            <h1 data-en="CFLH Course Manager" data-fr="CFLH Course Manager">CFLH Course Manager</h1>
+
+            <p class="subtitle"
+               data-en="A desktop application for managing language course administration."
+               data-fr="Une application de bureau pour la gestion administrative de cours de langues.">
                 A desktop application for managing language course administration.
             </p>
 
-            <p>
+            <p data-en="CFLH Course Manager is designed to support authorized staff in handling course participant data and communication tasks efficiently."
+               data-fr="CFLH Course Manager est conçu pour aider le personnel autorisé à gérer efficacement les données des participants aux cours et les tâches de communication.">
                 CFLH Course Manager is designed to support authorized staff in handling
                 course participant data and communication tasks efficiently.
             </p>
 
-            <h2>Main features</h2>
+            <h2 data-en="Main features" data-fr="Fonctionnalités principales">Main features</h2>
             <ul>
-                <li>Manage participant and course-related data</li>
-                <li>Manage course documents such as certificates</li>
-                <li>Send emails with attachments to course participants</li>
+                <li data-en="Manage participant and course-related data"
+                    data-fr="Gérer les données des participants et les informations liées aux cours">
+                    Manage participant and course-related data
+                </li>
+                <li data-en="Manage course documents such as certificates"
+                    data-fr="Gérer des documents de cours tels que les certificats">
+                    Manage course documents such as certificates
+                </li>
+                <li data-en="Send emails with attachments to course participants"
+                    data-fr="Envoyer des courriels avec pièces jointes aux participants des cours">
+                    Send emails with attachments to course participants
+                </li>
             </ul>
 
-            <h2>Use of Gmail</h2>
-            <p>
+            <h2 data-en="Use of Gmail" data-fr="Utilisation de Gmail">Use of Gmail</h2>
+            <p data-en="The application connects to Gmail only for sending emails explicitly initiated by the user. It does not read inbox contents or analyze mailbox data."
+               data-fr="L’application se connecte à Gmail uniquement pour envoyer des courriels explicitement déclenchés par l’utilisateur. Elle ne lit pas le contenu de la boîte de réception et n’analyse pas les données de messagerie.">
                 The application connects to Gmail only for sending emails explicitly initiated by the user.
                 It does not read inbox contents or analyze mailbox data.
             </p>
 
-            <a class="button-link" href="privacy.html">Read the Privacy Policy</a>
-			
-			<a class="button-link" href="https://github.com/frederic-schiltz/cflh-course-manager-site/releases/latest/download/CFLH-Course-Manager-Setup.exe">Download Installer</a>
+            <div class="button-row">
+                <a class="button-link"
+                   href="privacy.html"
+                   data-en="Read the Privacy Policy"
+                   data-fr="Lire la politique de confidentialité">
+                    Read the Privacy Policy
+                </a>
 
-            <p class="footer">
+                <a class="button-link"
+                   href="https://github.com/frederic-schiltz/cflh-course-manager-site/releases/latest/download/CFLH-Course-Manager-Setup.exe"
+                   data-en="Download Installer"
+                   data-fr="Télécharger l’installateur">
+                    Download Installer
+                </a>
+            </div>
+
+            <p class="footer"
+               data-en="Support contact: frederic.schiltz25@gmail.com"
+               data-fr="Contact support : frederic.schiltz25@gmail.com">
                 Support contact: frederic.schiltz25@gmail.com
             </p>
         </div>
     </div>
+
+    <script>
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll("[data-en]").forEach(el => {
+                el.textContent = el.getAttribute("data-" + lang);
+            });
+
+            document.getElementById("btn-en").classList.toggle("active", lang === "en");
+            document.getElementById("btn-fr").classList.toggle("active", lang === "fr");
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem("site-language", lang);
+            applyLanguage(lang);
+        }
+
+        const savedLanguage = localStorage.getItem("site-language") || "en";
+        applyLanguage(savedLanguage);
+    </script>
 </body>
 </html>

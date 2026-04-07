@@ -32,6 +32,33 @@
             padding: 48px 20px;
         }
 
+        .topbar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
         .card {
             background: var(--card);
             border: 1px solid var(--border);
@@ -81,75 +108,115 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <h1>Privacy Policy</h1>
-            <p class="subtitle">CFLH Course Manager</p>
+        <div class="topbar">
+            <div class="lang-switcher">
+                <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+            </div>
+        </div>
 
-            <p>
+        <div class="card">
+            <h1 data-en="Privacy Policy" data-fr="Politique de confidentialité">Privacy Policy</h1>
+            <p class="subtitle" data-en="CFLH Course Manager" data-fr="CFLH Course Manager">CFLH Course Manager</p>
+
+            <p data-en="This Privacy Policy explains how CFLH Course Manager handles data."
+               data-fr="Cette politique de confidentialité explique comment CFLH Course Manager traite les données.">
                 This Privacy Policy explains how CFLH Course Manager handles data.
             </p>
 
-            <h2>1. Purpose of the application</h2>
-            <p>
+            <h2 data-en="1. Purpose of the application" data-fr="1. Objet de l’application">1. Purpose of the application</h2>
+            <p data-en="CFLH Course Manager is a desktop application used to manage course-related administrative data and to send emails to course participants."
+               data-fr="CFLH Course Manager est une application de bureau utilisée pour gérer les données administratives liées aux cours et pour envoyer des courriels aux participants.">
                 CFLH Course Manager is a desktop application used to manage course-related
                 administrative data and to send emails to course participants.
             </p>
 
-            <h2>2. Data processed by the application</h2>
-            <p>
+            <h2 data-en="2. Data processed by the application" data-fr="2. Données traitées par l’application">2. Data processed by the application</h2>
+            <p data-en="The application may process participant names, contact details, course-related administrative data, and generated course documents such as certificates."
+               data-fr="L’application peut traiter les noms des participants, leurs coordonnées, les données administratives liées aux cours et les documents générés tels que les certificats.">
                 The application may process participant names, contact details,
                 course-related administrative data, and generated course documents such as certificates.
             </p>
-            <p>
+            <p data-en="All such data is processed locally on the user’s computer."
+               data-fr="Toutes ces données sont traitées localement sur l’ordinateur de l’utilisateur.">
                 All such data is processed locally on the user’s computer.
             </p>
 
-            <h2>3. Use of Google services</h2>
-            <p>
+            <h2 data-en="3. Use of Google services" data-fr="3. Utilisation des services Google">3. Use of Google services</h2>
+            <p data-en="The application uses the Gmail API solely to send emails initiated by the user."
+               data-fr="L’application utilise l’API Gmail uniquement pour envoyer des courriels déclenchés par l’utilisateur.">
                 The application uses the Gmail API solely to send emails initiated by the user.
             </p>
             <p>
-                Scope used:
+                <span data-en="Scope used:" data-fr="Portée utilisée :">Scope used:</span>
                 <br>
                 <strong>https://www.googleapis.com/auth/gmail.send</strong>
             </p>
-            <p>The application does not:</p>
+            <p data-en="The application does not:" data-fr="L’application ne :">The application does not:</p>
             <ul>
-                <li>read emails</li>
-                <li>access inbox contents</li>
-                <li>modify existing messages</li>
-                <li>store Gmail data on external servers</li>
+                <li data-en="read emails" data-fr="lit pas les courriels">read emails</li>
+                <li data-en="access inbox contents" data-fr="n’accède pas au contenu de la boîte de réception">access inbox contents</li>
+                <li data-en="modify existing messages" data-fr="ne modifie pas les messages existants">modify existing messages</li>
+                <li data-en="store Gmail data on external servers" data-fr="ne stocke pas les données Gmail sur des serveurs externes">store Gmail data on external servers</li>
             </ul>
 
-            <h2>4. Data storage</h2>
-            <p>
+            <h2 data-en="4. Data storage" data-fr="4. Stockage des données">4. Data storage</h2>
+            <p data-en="The application does not store personal data on external servers. Data remains on the user’s local system unless explicitly sent by email by the user."
+               data-fr="L’application ne stocke pas de données personnelles sur des serveurs externes. Les données restent sur le système local de l’utilisateur, sauf si elles sont explicitement envoyées par courriel par l’utilisateur.">
                 The application does not store personal data on external servers.
                 Data remains on the user’s local system unless explicitly sent by email by the user.
             </p>
 
-            <h2>5. Data sharing</h2>
-            <p>
+            <h2 data-en="5. Data sharing" data-fr="5. Partage des données">5. Data sharing</h2>
+            <p data-en="No personal data is shared with third parties, except when emails are sent by the user through Gmail."
+               data-fr="Aucune donnée personnelle n’est partagée avec des tiers, sauf lorsque des courriels sont envoyés par l’utilisateur via Gmail.">
                 No personal data is shared with third parties, except when emails are sent
                 by the user through Gmail.
             </p>
 
-            <h2>6. Security</h2>
-            <p>
+            <h2 data-en="6. Security" data-fr="6. Sécurité">6. Security</h2>
+            <p data-en="The application uses Google OAuth 2.0 authentication for Gmail access. No Gmail password is stored by the application."
+               data-fr="L’application utilise l’authentification Google OAuth 2.0 pour l’accès à Gmail. Aucun mot de passe Gmail n’est stocké par l’application.">
                 The application uses Google OAuth 2.0 authentication for Gmail access.
                 No Gmail password is stored by the application.
             </p>
 
-            <h2>7. Contact</h2>
-            <p>
+            <h2 data-en="7. Contact" data-fr="7. Contact">7. Contact</h2>
+            <p data-en="For questions regarding this Privacy Policy, please contact:"
+               data-fr="Pour toute question concernant cette politique de confidentialité, veuillez contacter :">
                 For questions regarding this Privacy Policy, please contact:
-                <br>
-                frederic.schiltz25@gmail.com
             </p>
+            <p>frederic.schiltz25@gmail.com</p>
 
             <p class="footer-link">
-                <a href="index.html">Back to homepage</a>
+                <a href="index.html"
+                   data-en="Back to homepage"
+                   data-fr="Retour à la page d’accueil">
+                    Back to homepage
+                </a>
             </p>
         </div>
     </div>
+
+    <script>
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll("[data-en]").forEach(el => {
+                el.textContent = el.getAttribute("data-" + lang);
+            });
+
+            document.getElementById("btn-en").classList.toggle("active", lang === "en");
+            document.getElementById("btn-fr").classList.toggle("active", lang === "fr");
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem("site-language", lang);
+            applyLanguage(lang);
+        }
+
+        const savedLanguage = localStorage.getItem("site-language") || "en";
+        applyLanguage(savedLanguage);
+    </script>
 </body>
 </html>
