@@ -125,17 +125,21 @@
             </p>
 
             <h2 data-en="1. Purpose of the application" data-fr="1. Objet de l’application">1. Purpose of the application</h2>
-            <p data-en="CFLH Course Manager is a desktop application used to manage course-related administrative data and to send emails to course participants."
-               data-fr="CFLH Course Manager est une application de bureau utilisée pour gérer les données administratives liées aux cours et pour envoyer des courriels aux participants.">
+            <p data-en="CFLH Course Manager is a desktop application used to manage course-related administrative data, to send emails to course participants, and to read, organize, and manage incoming emails, including downloading attachments and updating the read/unread status of messages."
+               data-fr="CFLH Course Manager est une application de bureau utilisée pour gérer les données administratives liées aux cours, pour envoyer des courriels aux participants, ainsi que pour lire, organiser et gérer les courriels reçus, y compris le téléchargement des pièces jointes et la mise à jour du statut lu/non lu des messages.">
                 CFLH Course Manager is a desktop application used to manage course-related
-                administrative data and to send emails to course participants.
+                administrative data, to send emails to course participants, and to read, organize,
+                and manage incoming emails, including downloading attachments and updating the
+                read/unread status of messages.
             </p>
 
             <h2 data-en="2. Data processed by the application" data-fr="2. Données traitées par l’application">2. Data processed by the application</h2>
-            <p data-en="The application may process participant names, contact details, course-related administrative data, and generated course documents such as certificates."
-               data-fr="L’application peut traiter les noms des participants, leurs coordonnées, les données administratives liées aux cours et les documents générés tels que les certificats.">
+            <p data-en="The application may process participant names, contact details, course-related administrative data, generated course documents such as certificates, and the content of emails accessed through Gmail, including sender and recipient addresses, subject, body, and attachments."
+               data-fr="L’application peut traiter les noms des participants, leurs coordonnées, les données administratives liées aux cours, les documents générés tels que les certificats, ainsi que le contenu des courriels consultés via Gmail, y compris les adresses de l’expéditeur et des destinataires, l’objet, le corps du message et les pièces jointes.">
                 The application may process participant names, contact details,
-                course-related administrative data, and generated course documents such as certificates.
+                course-related administrative data, generated course documents such as certificates,
+                and the content of emails accessed through Gmail, including sender and recipient
+                addresses, subject, body, and attachments.
             </p>
             <p data-en="All such data is processed locally on the user’s computer."
                data-fr="Toutes ces données sont traitées localement sur l’ordinateur de l’utilisateur.">
@@ -143,21 +147,27 @@
             </p>
 
             <h2 data-en="3. Use of Google services" data-fr="3. Utilisation des services Google">3. Use of Google services</h2>
-            <p data-en="The application uses the Gmail API solely to send emails initiated by the user."
-               data-fr="L’application utilise l’API Gmail uniquement pour envoyer des courriels déclenchés par l’utilisateur.">
-                The application uses the Gmail API solely to send emails initiated by the user.
+            <p data-en="The application uses the Gmail API to send emails, read email content and attachments, and update the read/unread status of messages, based on actions explicitly initiated by the user."
+               data-fr="L’application utilise l’API Gmail pour envoyer des courriels, lire le contenu des courriels et des pièces jointes, et mettre à jour le statut lu/non lu des messages, sur la base d’actions explicitement déclenchées par l’utilisateur.">
+                The application uses the Gmail API to send emails, read email content and attachments,
+                and update the read/unread status of messages, based on actions explicitly initiated
+                by the user.
             </p>
             <p>
-                <span data-en="Scope used:" data-fr="Portée utilisée :">Scope used:</span>
+                <span data-en="Scopes used:" data-fr="Portées utilisées :">Scopes used:</span>
                 <br>
                 <strong>https://www.googleapis.com/auth/gmail.send</strong>
+                <br>
+                <strong>https://www.googleapis.com/auth/gmail.readonly</strong>
+                <br>
+                <strong>https://www.googleapis.com/auth/gmail.modify</strong>
             </p>
-            <p data-en="The application does not:" data-fr="L’application ne :">The application does not:</p>
+            <p data-en="The application does not:" data-fr="L’application ne fait pas ce qui suit :">The application does not:</p>
             <ul>
-                <li data-en="read emails" data-fr="lit pas les courriels">read emails</li>
-                <li data-en="access inbox contents" data-fr="n’accède pas au contenu de la boîte de réception">access inbox contents</li>
-                <li data-en="modify existing messages" data-fr="ne modifie pas les messages existants">modify existing messages</li>
-                <li data-en="store Gmail data on external servers" data-fr="ne stocke pas les données Gmail sur des serveurs externes">store Gmail data on external servers</li>
+                <li data-en="permanently delete emails or bypass the Trash" data-fr="supprimer définitivement des courriels ou contourner la corbeille">permanently delete emails or bypass the Trash</li>
+                <li data-en="send emails without explicit action by the user" data-fr="envoyer des courriels sans action explicite de l’utilisateur">send emails without explicit action by the user</li>
+                <li data-en="store Gmail data on external servers" data-fr="stocker les données Gmail sur des serveurs externes">store Gmail data on external servers</li>
+                <li data-en="share Gmail data with third parties" data-fr="partager les données Gmail avec des tiers">share Gmail data with third parties</li>
             </ul>
 
             <h2 data-en="4. Data storage" data-fr="4. Stockage des données">4. Data storage</h2>
